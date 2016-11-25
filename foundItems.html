@@ -1,5 +1,6 @@
 <br><br><br>
 <h3 ng-if="foundItems.length > 0">Found {{ foundItems.length }} menu items:</h3>
+<h3 ng-if="searched && foundItems.length == 0">Nothing found!</h3>
 <ul>
   <li ng-repeat="item in foundItems">
     {{ item.short_name }} : {{ item.name }} : {{ item.description }}

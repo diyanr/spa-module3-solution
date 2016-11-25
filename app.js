@@ -12,7 +12,8 @@
 			templateUrl: 'foundItems.html',
 			scope: {
 				foundItems: '<',
-				onRemove: '&'
+				onRemove: '&',
+				searched: '<'
 			}
 		};
 
@@ -26,8 +27,10 @@
 
 		ctrl.searchTerm = "";
 		ctrl.found = [];
+		ctrl.searched = false;
 
 		ctrl.searchMenu = function() {
+			ctrl.searched = true;
 			if (ctrl.searchTerm.trim() != "") {
 				MenuSearchService.getMatchedMenuItems(ctrl.searchTerm.toLowerCase())
 				.then(function(response) {
