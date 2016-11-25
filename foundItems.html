@@ -1,8 +1,8 @@
 <br><br><br>
 <h3 ng-if="foundItems.length > 0">Found {{ foundItems.length }} menu items:</h3>
-<ol>
+<ul>
   <li ng-repeat="item in foundItems">
-    {{ item.name }} 
+    {{ item.short_name }} : {{ item.name }} : {{ item.description }}
     <button ng-click="onRemove({index: $index});">Remove Item</button>
   </li>
-</ol>
+</ul>
